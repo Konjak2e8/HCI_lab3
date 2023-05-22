@@ -38,7 +38,6 @@ line_fig.update_layout(title='Purchase Total by Age',
 
 # 用户购买行为可视化
 purchase_amount_fig = px.histogram(df, x='Purchase', title='Purchase Amount Distribution')
-product_category_fig = px.bar(df['Product_Category_1'].value_counts(), title='Product Category Distribution')
 
 # 读取一部分数据
 df_slice = pd.read_csv('dataset/black-friday/BlackFriday.csv', nrows=5000)
@@ -67,7 +66,6 @@ app.layout = html.Div(children=[
 
     html.H2(children='User Purchase Behavior'),
     dcc.Graph(figure=purchase_amount_fig),
-    dcc.Graph(figure=product_category_fig),
 
     html.H2(children='Age distribution on Purchase Sum'),
     dcc.Graph(figure=line_fig),
